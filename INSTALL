@@ -1,9 +1,9 @@
-Building Litecoin
+Building Deliverycoin
 
-See doc/readme-qt.rst for instructions on building Litecoin-Qt,
+See doc/readme-qt.rst for instructions on building Deliverycoin-Qt,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of Litecoin.
+implementation of Deliverycoin.
 
-See doc/build-*.txt for instructions on building litecoind,
+See doc/build-*.txt for instructions on building deliverycoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of Litecoin.
+implementation of Deliverycoin.
