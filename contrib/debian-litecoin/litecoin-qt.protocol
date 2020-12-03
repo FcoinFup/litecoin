@@ -1,6 +1,6 @@
 [Protocol]
-exec=litecoin-qt '%u'
-protocol=litecoin
+exec=deliverycoin-qt '%u'
+protocol=deliverycoin
 input=none
 output=none
 helper=true
