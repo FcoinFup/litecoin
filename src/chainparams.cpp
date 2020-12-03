@@ -111,11 +111,11 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xfb;
-        pchMessageStart[1] = 0xc0;
-        pchMessageStart[2] = 0xb6;
-        pchMessageStart[3] = 0xdb;
-        vAlertPubKey = ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9");
+        pchMessageStart[0] = 0xeb;
+        pchMessageStart[1] = 0xb0;
+        pchMessageStart[2] = 0xa6;
+        pchMessageStart[3] = 0xcb;
+        vAlertPubKey = ParseHex("0449618aa6d2287eba61e92c51dfa74cbc094e80e82e0a4abc254130e407b62d748646bf58389f31576fe4ef56be9728be42e7f22374d10f42d6e8437d3441533d");
         nDefaultPort = 2333;
         bnProofOfWorkLimit = ~uint256(0) >> 20;
         nSubsidyHalvingInterval = 840000;
@@ -137,31 +137,31 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
          *   vMerkleTree: 4a5e1e
          */
-        const char* pszTimestamp = "NY Times 05/Oct/2011 Steve Jobs, Apple’s Visionary, Dies at 56";
+        const char* pszTimestamp = "Delivery Coin Core";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0429e572075f77198976505517b80575521e376d779d58c47655bb1bd9ac55f1e58bfa077d735b114478ac93f696fe594ee7003f6a7f719ab934bb11f19ed532de") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1317972665;
+        genesis.nTime    = 1606364607;
         genesis.nBits    = 0x1e0ffff0;
-        genesis.nNonce   = 2084524493;
+        genesis.nNonce   = 2084661864;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"));
-        assert(genesis.hashMerkleRoot == uint256("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(hashGenesisBlock == uint256("0x76f4c337bda30e0d2fb2d62c960a3117a8a84ff6213084269b41f1c8694e14d8"));
+        assert(genesis.hashMerkleRoot == uint256("0xbb94f76e6e8e7ff02dbd5dedcc84e1011ace1308f95e58bb173223b7d56166f4"));
 
-        vSeeds.push_back(CDNSSeedData("deliverycointools.com", "dnsseed.deliverycointools.com"));
-        vSeeds.push_back(CDNSSeedData("deliverycoinpool.org", "dnsseed.deliverycoinpool.org"));
-        vSeeds.push_back(CDNSSeedData("xurious.com", "dnsseed.ltc.xurious.com"));
-        vSeeds.push_back(CDNSSeedData("koin-project.com", "dnsseed.koin-project.com"));
-        vSeeds.push_back(CDNSSeedData("weminemnc.com", "dnsseed.weminemnc.com"));
-        vSeeds.push_back(CDNSSeedData("loshan.co.uk", "seed-a.deliverycoin.loshan.co.uk"));
+        // vSeeds.push_back(CDNSSeedData("deliverycointools.com", "dnsseed.deliverycointools.com"));
+        // vSeeds.push_back(CDNSSeedData("deliverycoinpool.org", "dnsseed.deliverycoinpool.org"));
+        // vSeeds.push_back(CDNSSeedData("xurious.com", "dnsseed.ltc.xurious.com"));
+        // vSeeds.push_back(CDNSSeedData("koin-project.com", "dnsseed.koin-project.com"));
+        // vSeeds.push_back(CDNSSeedData("weminemnc.com", "dnsseed.weminemnc.com"));
+        // vSeeds.push_back(CDNSSeedData("loshan.co.uk", "seed-a.deliverycoin.loshan.co.uk"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,48);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -203,7 +203,7 @@ public:
         pchMessageStart[1] = 0xd2;
         pchMessageStart[2] = 0xc8;
         pchMessageStart[3] = 0xf1;
-        vAlertPubKey = ParseHex("0449623fc74489a947c4b15d579115591add020e53b3490bf47297dfa3762250625f8ecc2fb4fc59f69bdce8f7080f3167808276ed2c79d297054367566038aa82");
+        vAlertPubKey = ParseHex("0430c9d753d0f95067b44e2a89ee55ca2561af2bdd181a5afc268666ed276e6015fddce6bb293acd7264ab4c36dde0f16cd1d87fecfd868b174ba93288d4786a27");
         nDefaultPort = 19335;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
@@ -214,8 +214,8 @@ public:
         nMaxTipAge = 0x7fffffff;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1486949366;
-        genesis.nNonce = 293345;
+        genesis.nTime = 1606364607;
+        genesis.nNonce = 2084661864;
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"));
 
