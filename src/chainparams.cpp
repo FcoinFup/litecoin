@@ -101,20 +101,20 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xeb;
-        pchMessageStart[1] = 0xb0;
-        pchMessageStart[2] = 0xa6;
-        pchMessageStart[3] = 0xcb;
+        pchMessageStart[0] = 0xec;
+        pchMessageStart[1] = 0xb1;
+        pchMessageStart[2] = 0xa7;
+        pchMessageStart[3] = 0xcc;
         nDefaultPort = 2333;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 22;
         m_assumed_chain_state_size = 3;
 
-        genesis = CreateGenesisBlock(1606364607, 2084661864, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1606364607, 2084990710, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-	cout << consensus.hashGenesisBlock;
-        assert(consensus.hashGenesisBlock == uint256S("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"));
-        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+	std::cout << consensus.hashGenesisBlock.ToString()<<std::endl;
+        assert(consensus.hashGenesisBlock == uint256S("1ee6d05d03a64894f1bfde8bcd62f392fece8bda8b8544d196ef9f8245131a67"));
+        assert(genesis.hashMerkleRoot == uint256S("0x7f03956e30785ea841f5aa2fbe49fe97ad39b70831e6675fd60ea6c0c2a678dd"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -207,11 +207,11 @@ public:
         m_assumed_blockchain_size = 2;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1486949366, 293345, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1606364607, 2084661864, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-	cout << consensus.hashGenesisBlock;
-        assert(consensus.hashGenesisBlock == uint256S("0x4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"));
-        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+	std::cout << consensus.hashGenesisBlock.ToString() << std::endl;
+        assert(consensus.hashGenesisBlock == uint256S("714da405de2b3b66cea76823b2f610f6f0707a46a17de7c50a7293e820b6e727"));
+        assert(genesis.hashMerkleRoot == uint256S("0x7f03956e30785ea841f5aa2fbe49fe97ad39b70831e6675fd60ea6c0c2a678dd"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -220,7 +220,7 @@ public:
         vSeeds.emplace_back("seed-b.deliverycoin.loshan.co.uk");
         vSeeds.emplace_back("dnsseed-testnet.thrasher.io");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,30);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
         base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,58);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
@@ -302,8 +302,10 @@ public:
 
         genesis = CreateGenesisBlock(1296688602, 0, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x530827f38f93b43ed12af0b3ad25a288dc02ed74d6d7857862df51fc56c416f9"));
-        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+	std::cout << consensus.hashGenesisBlock.ToString() << std::endl;
+        assert(consensus.hashGenesisBlock == uint256S("badeb6d05aab11507e8cf929bbeb9432915cd85d2c223eeebbbcb9221091e935"));
+	std::cout << genesis.hashMerkleRoot.ToString() << std::endl;
+        assert(genesis.hashMerkleRoot == uint256S("7f03956e30785ea841f5aa2fbe49fe97ad39b70831e6675fd60ea6c0c2a678dd"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
