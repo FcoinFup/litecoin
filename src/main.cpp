@@ -2742,10 +2742,10 @@ bool LoadBlockIndex()
 {
     if (fTestNet)
     {
-        pchMessageStart[0] = 0xec;
-        pchMessageStart[1] = 0xb1;
-        pchMessageStart[2] = 0xa7;
-        pchMessageStart[3] = 0xcc;
+        pchMessageStart[0] = 0xed;
+        pchMessageStart[1] = 0xb2;
+        pchMessageStart[2] = 0xa8;
+        pchMessageStart[3] = 0xcd;
         hashGenesisBlock = uint256("0x1ee6d05d03a64894f1bfde8bcd62f392fece8bda8b8544d196ef9f8245131a67");
     }
 
@@ -2801,7 +2801,7 @@ bool InitBlockIndex() {
             block.nNonce   = 2084661864;
         }
 
-	if (true && block.GetHash() != hashGenesisBlock)
+	if (false && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
