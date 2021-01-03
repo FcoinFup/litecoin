@@ -110,10 +110,11 @@ public:
         m_assumed_blockchain_size = 22;
         m_assumed_chain_state_size = 3;
 
-        genesis = CreateGenesisBlock(1606364607, 2084990710, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1609247422, 2084893461, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 	std::cout << consensus.hashGenesisBlock.ToString()<<std::endl;
-        assert(consensus.hashGenesisBlock == uint256S("1ee6d05d03a64894f1bfde8bcd62f392fece8bda8b8544d196ef9f8245131a67"));
+        assert(consensus.hashGenesisBlock == uint256S("2e1c343279a66a1a435b3dbd18ac51b0229a469152c1ed5ac0ade6eb5b8c4171"));
+    std::cout << genesis.hashMerkleRoot.ToString()<<std::endl;
         assert(genesis.hashMerkleRoot == uint256S("0x7f03956e30785ea841f5aa2fbe49fe97ad39b70831e6675fd60ea6c0c2a678dd"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
@@ -207,10 +208,11 @@ public:
         m_assumed_blockchain_size = 2;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1606364607, 2084661864, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1609247422, 2084661864, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 	std::cout << consensus.hashGenesisBlock.ToString() << std::endl;
-        assert(consensus.hashGenesisBlock == uint256S("714da405de2b3b66cea76823b2f610f6f0707a46a17de7c50a7293e820b6e727"));
+        assert(consensus.hashGenesisBlock == uint256S("72d1894c35b27e72064152fb408d3005694be3308bf46c72bf74b276de7d33b9"));
+	std::cout << genesis.hashMerkleRoot.ToString() << std::endl;
         assert(genesis.hashMerkleRoot == uint256S("0x7f03956e30785ea841f5aa2fbe49fe97ad39b70831e6675fd60ea6c0c2a678dd"));
 
         vFixedSeeds.clear();
@@ -227,7 +229,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tltc";
+        bech32_hrp = "dvcc";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -300,10 +302,10 @@ public:
 
         UpdateVersionBitsParametersFromArgs(args);
 
-        genesis = CreateGenesisBlock(1296688602, 0, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1609247422, 0, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 	std::cout << consensus.hashGenesisBlock.ToString() << std::endl;
-        assert(consensus.hashGenesisBlock == uint256S("badeb6d05aab11507e8cf929bbeb9432915cd85d2c223eeebbbcb9221091e935"));
+        assert(consensus.hashGenesisBlock == uint256S("b01b5c11b424d8412b6377e1ea285d906ef49baff4f64de6169c76ac329582dd"));
 	std::cout << genesis.hashMerkleRoot.ToString() << std::endl;
         assert(genesis.hashMerkleRoot == uint256S("7f03956e30785ea841f5aa2fbe49fe97ad39b70831e6675fd60ea6c0c2a678dd"));
 
